@@ -28,7 +28,7 @@ public class HistorialMovimientos {
     @Required
     int cantidad;
 
-    // Relación con Producto (Muchos a Uno)
+    // relacion con producto (Muchos a Uno)
     @ManyToOne
     Producto producto;
 }

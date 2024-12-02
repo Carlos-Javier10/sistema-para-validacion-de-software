@@ -44,16 +44,16 @@ public class Producto {
     @Required
     Date fechaIngreso;
 
-    // Relación con Inventario (Muchos a Uno)
+    // relacion con Inventario (Muchos a Uno)
     @ManyToOne
     Inventario inventario;
 
-    // Relación con CategoriaProducto (Muchos a Uno)
+    // relacion con categoriaProducto (Muchos a Uno)
     @ManyToOne
     @DescriptionsList
     CategoriaProducto categoria;
 
-    // Relación con HistorialMovimientos (Uno a Muchos)
+    // relacion con historialMovimientos (Uno a Muchos)
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
     List<HistorialMovimientos> movimientos = new ArrayList<>();
 }

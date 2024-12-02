@@ -28,7 +28,7 @@ public class Proveedor {
     @Required
     String direccion;
 
-    // Relación con Inventario (Muchos a Muchos)
+    // relacion con inventario (Muchos a Muchos)
     @ManyToMany(mappedBy = "proveedores")
     List<Inventario> inventarios = new ArrayList<>();
 }

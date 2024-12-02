@@ -23,7 +23,8 @@ public class CategoriaProducto {
     @Column(length = 200)
     String descripcion;
 
-    // Relacion con Producto (Uno a Muchos)
+    // rrelacion con producto (Uno a Muchos)
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     List<Producto> productos = new ArrayList<>();
 }
+

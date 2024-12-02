@@ -24,16 +24,16 @@ public class Inventario {
     @Required
     int capacidadMaxima;
 
-    // Relación con Usuario (Uno a Muchos)
+    // relacion con usuario (Uno a Muchos)
     @ManyToOne
     @DescriptionsList
     Usuario usuario;
 
-    // Relación con Producto (Uno a Muchos)
+    // relacion con producto (Uno a Muchos)
     @OneToMany(mappedBy = "inventario", cascade = CascadeType.ALL)
     List<Producto> productos = new ArrayList<>();
 
-    // Relación con Proveedor (Muchos a Muchos)
+    // relacion con proveedor (Muchos a Muchos)
     @ManyToMany
     @JoinTable(
         name = "inventario_proveedor",
