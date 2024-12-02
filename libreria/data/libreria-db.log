@@ -1,0 +1,17 @@
+/*C4*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+alter table HistorialMovimientos add column cantidad integer
+alter table HistorialMovimientos add column tipoMovi varchar(50)
+alter table HistorialMovimientos add column producto_idProducto integer
+alter table Inventario add column usuario_idUsuario integer
+create table inventario_proveedor (idInventario integer not null, idProveedor integer not null)
+alter table Producto add column cantidad integer
+alter table Producto add column categoria_idCategoria integer
+alter table Producto add column inventario_idInventario integer
+alter table HistorialMovimientos add constraint FK8i28uq2xef0o13ahsblx0q955 foreign key (producto_idProducto) references Producto
+alter table Inventario add constraint FKr9ovnqtgjvksflco56e2blwi foreign key (usuario_idUsuario) references Usuario
+alter table inventario_proveedor add constraint FKo02e9qy5g10dicqm7tcl76ec6 foreign key (idProveedor) references Proveedor
+alter table inventario_proveedor add constraint FKeivcnxedvwns6ddiv2eaer41s foreign key (idInventario) references Inventario
+alter table Producto add constraint FK40rosrh5knnp9xj6l8c9cji9g foreign key (categoria_idCategoria) references CategoriaProducto
+alter table Producto add constraint FKatdo2le8oj33f1ck4cmskso1o foreign key (inventario_idInventario) references Inventario
